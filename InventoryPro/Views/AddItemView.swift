@@ -51,7 +51,6 @@ struct AddItemView: View {
                             ForEach(categories) { category in
                                 Text(category.name).tag(category as ItemCategory?)
                             }
-                            d
                         }
                         NavigationLink("Add Category") {
                             AddCategoryView()
