@@ -24,8 +24,14 @@ struct InventoryProApp: App {
     }()
 
     var body: some Scene {
+        
         WindowGroup {
-            ContentView()
+            TabView{
+                ContentView()
+                    .tabItem {
+                        Label("Items", systemImage: "book")
+                    }
+            }
         }
         .modelContainer(sharedModelContainer)
     }

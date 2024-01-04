@@ -11,6 +11,7 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    @State private var isShowingSheet = false
 
     var body: some View {
         NavigationSplitView {
@@ -19,13 +20,13 @@ struct ContentView: View {
                     NavigationLink {
                         Text("Item at \(item.purchaseDate, format: Date.FormatStyle(date: .numeric, time: .standard))")
                         Text("name: \(item.name)")
-                        Text("name: \(item.category)")
+                        Text("name: \(item.category?.name ?? "")")
                         Text("name: \(item.location)")
                         Text("name: \(item.dateAdded, format: Date.FormatStyle(date: .numeric, time: .standard))")
 //                        Text("name: \(item.purchasePrice)")
 //                        Text("name: \(item.currentValue)")
                         Text("name: \(item.quantity)")
-                        Text("name: \(item.condition)")
+                        Text("name: \(item.condition.rawValue)")
                         Text("name: \(item.notes)")
                         
                     } label: {
@@ -39,26 +40,23 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: {
+                        isShowingSheet.toggle()
+                    }) {
                         Label("Add Item", systemImage: "plus")
                     }
+                    .sheet(isPresented: $isShowingSheet, content: {
+                        AddItemView()
+                    })
                 }
             }
         } detail: {
             Text("Select an item")
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let currentDate = Date()
-            let newItem = Item(
-                name: "PS5", category: "Technology", location: "Bedroom", purchaseDate: currentDate, purchasePrice: 799.99, dateAdded: currentDate, currentValue: 500, quantity: 1, condition: "Like New", notes: "Use it occassionally", imageData: nil
-            )
-            modelContext.insert(newItem)
+        .onAppear {
+            print(URL.applicationSupportDirectory.path(percentEncoded: false))
         }
     }
-
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
@@ -70,5 +68,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Item.self, inMemory: false)
 }
+
