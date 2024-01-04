@@ -17,9 +17,19 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        Text("Item at \(item.purchaseDate, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        Text("name: \(item.name)")
+                        Text("name: \(item.category)")
+                        Text("name: \(item.location)")
+                        Text("name: \(item.dateAdded, format: Date.FormatStyle(date: .numeric, time: .standard))")
+//                        Text("name: \(item.purchasePrice)")
+//                        Text("name: \(item.currentValue)")
+                        Text("name: \(item.quantity)")
+                        Text("name: \(item.condition)")
+                        Text("name: \(item.notes)")
+                        
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text(item.purchaseDate, format: Date.FormatStyle(date: .numeric, time: .standard))
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -41,7 +51,10 @@ struct ContentView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
+            let currentDate = Date()
+            let newItem = Item(
+                name: "PS5", category: "Technology", location: "Bedroom", purchaseDate: currentDate, purchasePrice: 799.99, dateAdded: currentDate, currentValue: 500, quantity: 1, condition: "Like New", notes: "Use it occassionally", imageData: nil
+            )
             modelContext.insert(newItem)
         }
     }
