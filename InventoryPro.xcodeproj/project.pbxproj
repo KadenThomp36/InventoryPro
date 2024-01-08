@@ -18,6 +18,7 @@
 		316650F32B464B7B00C3012D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316650F22B464B7B00C3012D /* Preview Assets.xcassets */; };
 		31BDA5A32B470CD700211300 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BDA5A22B470CD700211300 /* AddItemView.swift */; };
 		31BDA5A62B4748F800211300 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BDA5A52B4748F700211300 /* ItemCategory.swift */; };
+		4FD529C92B4C95EF00165276 /* CategoryLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD529C82B4C95EF00165276 /* CategoryLinkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		316650F22B464B7B00C3012D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		31BDA5A22B470CD700211300 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		31BDA5A52B4748F700211300 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
+		4FD529C82B4C95EF00165276 /* CategoryLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLinkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				31132A592B4C32CA00605541 /* ItemLinkView.swift */,
+				4FD529C82B4C95EF00165276 /* CategoryLinkView.swift */,
 			);
 			path = "List Views";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD529C92B4C95EF00165276 /* CategoryLinkView.swift in Sources */,
 				316650EC2B464B7900C3012D /* ContentView.swift in Sources */,
 				316650EE2B464B7900C3012D /* Item.swift in Sources */,
 				316650EA2B464B7900C3012D /* InventoryProApp.swift in Sources */,

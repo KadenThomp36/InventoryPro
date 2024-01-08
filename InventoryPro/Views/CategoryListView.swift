@@ -24,7 +24,7 @@ struct CategoryListView: View {
                         ItemList(itemCategoryName: category.name)
                             .navigationTitle(category.name)
                     } label: {
-                        Text(category.name)
+                        CategoryLinkView(category: category)
                     }
                 }
                 
