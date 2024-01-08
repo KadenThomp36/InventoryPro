@@ -17,8 +17,8 @@ final class Item {
     var location: String
     var purchaseDate: Date
     var dateAdded: Date
-    var purchasePrice: Decimal
-    var currentValue: Decimal
+    var purchasePrice: Double
+    var currentValue: Double
     var quantity: Int
     var condition: Condition
     var notes: String
@@ -26,7 +26,7 @@ final class Item {
     var inUse: Bool
     var archieve: Bool
 
-    init(name: String, location: String, purchaseDate: Date, purchasePrice: Decimal, dateAdded: Date, currentValue: Decimal, quantity: Int, condition: Condition, notes: String,tag: String, inUse: Bool, archieve: Bool, imageData: Data?) {
+    init(name: String, location: String, purchaseDate: Date, purchasePrice: Double, dateAdded: Date, currentValue: Double, quantity: Int, condition: Condition, notes: String,tag: String, inUse: Bool, archieve: Bool, imageData: Data?) {
         self.name = name
         self.location = location
         self.purchaseDate = purchaseDate

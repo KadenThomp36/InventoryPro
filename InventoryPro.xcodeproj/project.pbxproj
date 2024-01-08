@@ -10,6 +10,7 @@
 		3106B81F2B4886F8006B4672 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B81E2B4886F8006B4672 /* ItemListView.swift */; };
 		3106B8212B489E04006B4672 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B8202B489E04006B4672 /* CategoryListView.swift */; };
 		3106B8232B4B8741006B4672 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B8222B4B8741006B4672 /* ItemDetailView.swift */; };
+		31132A5A2B4C32CA00605541 /* ItemLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31132A592B4C32CA00605541 /* ItemLinkView.swift */; };
 		316650EA2B464B7900C3012D /* InventoryProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316650E92B464B7900C3012D /* InventoryProApp.swift */; };
 		316650EC2B464B7900C3012D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316650EB2B464B7900C3012D /* ContentView.swift */; };
 		316650EE2B464B7900C3012D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316650ED2B464B7900C3012D /* Item.swift */; };
@@ -23,6 +24,7 @@
 		3106B81E2B4886F8006B4672 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		3106B8202B489E04006B4672 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		3106B8222B4B8741006B4672 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		31132A592B4C32CA00605541 /* ItemLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLinkView.swift; sourceTree = "<group>"; };
 		316650E62B464B7900C3012D /* InventoryPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		316650E92B464B7900C3012D /* InventoryProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryProApp.swift; sourceTree = "<group>"; };
 		316650EB2B464B7900C3012D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +46,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31132A582B4C32A000605541 /* List Views */ = {
+			isa = PBXGroup;
+			children = (
+				31132A592B4C32CA00605541 /* ItemLinkView.swift */,
+			);
+			path = "List Views";
+			sourceTree = "<group>";
+		};
 		316650DD2B464B7900C3012D = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +73,7 @@
 		316650E82B464B7900C3012D /* InventoryPro */ = {
 			isa = PBXGroup;
 			children = (
+				31132A582B4C32A000605541 /* List Views */,
 				31BDA5A42B4748C600211300 /* Models */,
 				31BDA5A12B470CA800211300 /* Views */,
 				316650E92B464B7900C3012D /* InventoryProApp.swift */,
@@ -179,6 +190,7 @@
 				3106B81F2B4886F8006B4672 /* ItemListView.swift in Sources */,
 				3106B8212B489E04006B4672 /* CategoryListView.swift in Sources */,
 				31BDA5A32B470CD700211300 /* AddItemView.swift in Sources */,
+				31132A5A2B4C32CA00605541 /* ItemLinkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -49,7 +49,7 @@ struct ItemList: View {
                         ItemDetailView(item: item)
                             .navigationTitle(item.name)
                     } label: {
-                        Text(item.purchaseDate, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        ItemLinkView(item: item)
                     }
                 }
                 .onDelete(perform: deleteItems)

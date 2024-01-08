@@ -60,6 +60,9 @@ struct ContentView: View {
         .sheet(isPresented: $isShowingSheet, content: {
             AddItemView()
         })
+        .onAppear {
+            print(URL.applicationSupportDirectory.path(percentEncoded: false))
+        }
     }
 }
 
