@@ -14,23 +14,10 @@ struct ContentView: View {
     @State private var isShowingSheet = false
     
     var body: some View {
-        //        NavigationSplitView(columnVisibility: $navigationContext.columnVisibility) {
-        //            AnimalCategoryListView()
-        //                .navigationTitle(navigationContext.sidebarTitle)
-        //        } content: {
-        //            AnimalListView(animalCategoryName: navigationContext.selectedAnimalCategoryName)
-        //                .navigationTitle(navigationContext.contentListTitle)
-        //        } detail: {
-        //            NavigationStack {
-        //                AnimalDetailView(animal: navigationContext.selectedAnimal)
-        //            }
-        //        }
-        
-        VStack {
+        ZStack {
             NavigationStack {
                 
                 CategoryListView()
-                    .navigationTitle("Categories")
                 
             }
 
@@ -57,6 +44,7 @@ struct ContentView: View {
                 }
             }
         }
+        .navigationTitle("Categories")
         .sheet(isPresented: $isShowingSheet, content: {
             AddItemView()
         })

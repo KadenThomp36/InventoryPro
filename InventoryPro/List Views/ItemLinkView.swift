@@ -14,8 +14,10 @@ struct ItemLinkView: View {
             HStack {
                 Text("\(item.quantity)")
                 Text("\(item.name)")
+
                 Spacer()
             }
+            .font(.headline)
             HStack {
                 Text("\(item.condition.rawValue)")
                 Spacer()

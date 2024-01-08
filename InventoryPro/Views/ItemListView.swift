@@ -53,6 +53,7 @@ struct ItemList: View {
                     }
                 }
                 .onDelete(perform: deleteItems)
+                .listRowSeparator(.hidden)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

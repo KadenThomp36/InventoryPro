@@ -9,6 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct AddItemView: View {
+    @State private var category: String = ""
+    @State private var isInputAlertShown = false
+    
     @State private var name: String = ""
     @State private var itemCategory: ItemCategory?
     @State private var location: String = ""
@@ -27,7 +30,7 @@ struct AddItemView: View {
     //@State private var image: Data
     
     let range = 1...50
-
+    
     var body: some View {
         NavigationSplitView{
             VStack{
@@ -49,28 +52,51 @@ struct AddItemView: View {
                         }
                     }
                     Section(header: Text("Notifications")) {
+                        HStack{
                         Picker("Category", selection: $itemCategory) {
                             Text("Select a category").tag(ItemCategory(name: "Uncategorized"))
                             ForEach(categories) { category in
                                 Text(category.name).tag(category as ItemCategory?)
                             }
+
                         }
-                        NavigationLink("Add Category") {
-                            AddCategoryView()
-                        }
+                            Spacer()
+                            Button("+") {
+                                isInputAlertShown = true
+                            }
+                            .padding(.leading)
+                            .font(.title)
+                            .buttonStyle(BorderlessButtonStyle())
+
                     }
-                        
+                        HStack {
+
+//                            .padding(.trailing, 40.0)
+
+    
+                            NavigationLink {
+                                EditCategoryView()
+                                    .navigationTitle("Edit Categories")
+                            } label: {
+                                Text("Edit Categories")
+                            }
+      
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                        }
+                    
+                    
                     Stepper(
                         value: $quantity,
                         in: range
                     ) {
                         Text("Quantity: \(quantity)x") // make this a text field instead
                     }
-                        TextField("name", text: $name)
-                        TextField("name", text: $name)
-                        TextField("name", text: $name)
-                        TextField("name", text: $name)
-                        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                    TextField("name", text: $name)
+                    TextField("name", text: $name)
+                    TextField("name", text: $name)
+                    TextField("name", text: $name)
+                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
                     
                 }
             }
@@ -90,12 +116,29 @@ struct AddItemView: View {
         } detail: { // research what this does
             Text("Select an item")
         }
+        .alert("Add New Category", isPresented: $isInputAlertShown) {
+            TextField("Enter Job Title", text: $category)
+                .textInputAutocapitalization(.words)
+            Button("Add", action: addCategory)
+            Button("Cancel", role: .cancel) { }
+        }
+        
+    }
+    
+    private func addCategory() {
+        withAnimation {
+            let newCat = ItemCategory(
+                name: category
+            )
+            modelContext.insert(newCat)
+            category = ""
+        }
     }
     
     private func addItem() {
         let uncat = ItemCategory(name: "Uncategorized")
         modelContext.insert(uncat)
-
+        
         withAnimation {
             let currentDate = Date()
             let newItem = Item(
@@ -123,25 +166,24 @@ struct AddItemView: View {
 
 
 
-struct AddCategoryView: View {
-    @State private var category: String = ""
-    @State private var isInputAlertShown = false
+struct EditCategoryView: View {
+    
     
     @Query private var categories: [ItemCategory]
     
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-
+    
     var body: some View {
         VStack{
-                    Button(action: {
-                        //addCategory()
-                        //dismiss()
-                        isInputAlertShown = true
-                         }) {
-                             Label("Add", systemImage: "plus")
-                         }
-                            
+//            Button(action: {
+//                //addCategory()
+//                //dismiss()
+//                //isInputAlertShown = true
+//            }) {
+//                Label("Add", systemImage: "plus")
+//            }
+            
             List {
                 ForEach(categories) { cat in
                     Text("\(cat.name)")
@@ -150,24 +192,10 @@ struct AddCategoryView: View {
             }
             Spacer()
         }
-        .alert("Add New Category", isPresented: $isInputAlertShown) {
-            TextField("Enter Job Title", text: $category)
-                    .textInputAutocapitalization(.words)
-            Button("Add", action: addCategory)
-            Button("Cancel", role: .cancel) { }
-        }
         
     }
     
-    private func addCategory() {
-        withAnimation {
-            let newCat = ItemCategory(
-                name: category
-            )            
-            modelContext.insert(newCat)
-            category = ""
-        }
-    }
+    
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {

@@ -16,12 +16,19 @@ struct CategoryListView: View {
     var body: some View {
         List {
             ForEach(categories) { category in
-                NavigationLink {
-                    ItemList(itemCategoryName: category.name)
-                        .navigationTitle(category.name)
-                } label: {
-                    Text(category.name)
+                Section(header: Text("\(category.name)")
+                    .font(.title)
+                    .fontWeight(.black)
+                    .foregroundColor(Color.black)) {
+                    NavigationLink {
+                        ItemList(itemCategoryName: category.name)
+                            .navigationTitle(category.name)
+                    } label: {
+                        Text(category.name)
+                    }
                 }
+                
+
             }
             .onDelete(perform: deleteItems)
         }
