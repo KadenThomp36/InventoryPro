@@ -10,59 +10,56 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var categories: [ItemCategory]
     @State private var isShowingSheet = false
-
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.purchaseDate, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                        Text("name: \(item.name)")
-                        Text("name: \(item.category?.name ?? "")")
-                        Text("name: \(item.location)")
-                        Text("name: \(item.dateAdded, format: Date.FormatStyle(date: .numeric, time: .standard))")
-//                        Text("name: \(item.purchasePrice)")
-//                        Text("name: \(item.currentValue)")
-                        Text("name: \(item.quantity)")
-                        Text("name: \(item.condition.rawValue)")
-                        Text("name: \(item.notes)")
-                        
-                    } label: {
-                        Text(item.purchaseDate, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        //        NavigationSplitView(columnVisibility: $navigationContext.columnVisibility) {
+        //            AnimalCategoryListView()
+        //                .navigationTitle(navigationContext.sidebarTitle)
+        //        } content: {
+        //            AnimalListView(animalCategoryName: navigationContext.selectedAnimalCategoryName)
+        //                .navigationTitle(navigationContext.contentListTitle)
+        //        } detail: {
+        //            NavigationStack {
+        //                AnimalDetailView(animal: navigationContext.selectedAnimal)
+        //            }
+        //        }
+        
+        VStack {
+            NavigationStack {
+                
+                CategoryListView()
+                    .navigationTitle("Categories")
+                
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
+
+            VStack {
+                Spacer()
+                HStack{
+                    Spacer()
                     Button(action: {
+                        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                         isShowingSheet.toggle()
-                    }) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                    .sheet(isPresented: $isShowingSheet, content: {
-                        AddItemView()
-                    })
+                    }, label:  {
+                        Text("+")
+                            .font(.system(.largeTitle))
+                            .frame(width: 77, height: 70)
+                            .foregroundColor(Color.white)
+                            .padding(.bottom, 7)
+                    }).background(Color.blue)
+                        .cornerRadius(38.5)
+                        .padding()
+                        .shadow(color: Color.black.opacity(0.3),
+                                radius: 3,
+                                x: 3,
+                                y: 3)
                 }
             }
-        } detail: {
-            Text("Select an item")
         }
-        .onAppear {
-            print(URL.applicationSupportDirectory.path(percentEncoded: false))
-        }
-    }
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
+        .sheet(isPresented: $isShowingSheet, content: {
+            AddItemView()
+        })
     }
 }
 

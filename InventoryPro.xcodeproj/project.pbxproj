@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3106B81F2B4886F8006B4672 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B81E2B4886F8006B4672 /* ItemListView.swift */; };
+		3106B8212B489E04006B4672 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B8202B489E04006B4672 /* CategoryListView.swift */; };
+		3106B8232B4B8741006B4672 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B8222B4B8741006B4672 /* ItemDetailView.swift */; };
 		316650EA2B464B7900C3012D /* InventoryProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316650E92B464B7900C3012D /* InventoryProApp.swift */; };
 		316650EC2B464B7900C3012D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316650EB2B464B7900C3012D /* ContentView.swift */; };
 		316650EE2B464B7900C3012D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316650ED2B464B7900C3012D /* Item.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3106B81E2B4886F8006B4672 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		3106B8202B489E04006B4672 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		3106B8222B4B8741006B4672 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		316650E62B464B7900C3012D /* InventoryPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		316650E92B464B7900C3012D /* InventoryProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryProApp.swift; sourceTree = "<group>"; };
 		316650EB2B464B7900C3012D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +85,9 @@
 			children = (
 				316650EB2B464B7900C3012D /* ContentView.swift */,
 				31BDA5A22B470CD700211300 /* AddItemView.swift */,
+				3106B81E2B4886F8006B4672 /* ItemListView.swift */,
+				3106B8202B489E04006B4672 /* CategoryListView.swift */,
+				3106B8222B4B8741006B4672 /* ItemDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,7 +174,10 @@
 				316650EC2B464B7900C3012D /* ContentView.swift in Sources */,
 				316650EE2B464B7900C3012D /* Item.swift in Sources */,
 				316650EA2B464B7900C3012D /* InventoryProApp.swift in Sources */,
+				3106B8232B4B8741006B4672 /* ItemDetailView.swift in Sources */,
 				31BDA5A62B4748F800211300 /* ItemCategory.swift in Sources */,
+				3106B81F2B4886F8006B4672 /* ItemListView.swift in Sources */,
+				3106B8212B489E04006B4672 /* CategoryListView.swift in Sources */,
 				31BDA5A32B470CD700211300 /* AddItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

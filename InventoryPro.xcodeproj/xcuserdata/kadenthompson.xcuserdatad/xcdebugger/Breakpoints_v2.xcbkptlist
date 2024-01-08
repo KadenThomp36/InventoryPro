@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5D54B3E3-3DC0-4A0C-9187-EC9155F33F1F"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE2730F7-FA50-445D-BC43-720E1E99EE83"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InventoryPro/Views/AddItemView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "addItem()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CE2730F7-FA50-445D-BC43-720E1E99EE83 - 489f61b0991ba902"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in InventoryPro.AddItemView.addItem() -&gt; ()"
+                  moduleName = "InventoryPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadenthompson/Documents/Git/InventoryPro/InventoryPro/InventoryPro/Views/AddItemView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "2092">
+               </Location>
+               <Location
+                  uuid = "CE2730F7-FA50-445D-BC43-720E1E99EE83 - 489f61b0991ba902"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in InventoryPro.AddItemView.addItem() -&gt; ()"
+                  moduleName = "InventoryPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kadenthompson/Documents/Git/InventoryPro/InventoryPro/InventoryPro/Views/AddItemView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "2112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

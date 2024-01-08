@@ -21,6 +21,7 @@ struct AddItemView: View {
     @State private var tag: String = ""
     
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
     
     @Query(sort: \ItemCategory.name) private var categories: [ItemCategory]
     //@State private var image: Data
@@ -35,7 +36,9 @@ struct AddItemView: View {
                         
                         TextField("name", text: $name)
                         TextField("location", text: $location)
-                        DatePicker(selection: $purchaseDate, label: { Text("Purchase Date") })
+                        DatePicker("Purchase Date",
+                                   selection: $purchaseDate,
+                                   displayedComponents: [.date])
                         
                         
                         // TextField("Purchase Price", text: $purchasePrice)
@@ -47,7 +50,7 @@ struct AddItemView: View {
                     }
                     Section(header: Text("Notifications")) {
                         Picker("Category", selection: $itemCategory) {
-                            Text("Select a category").tag(nil as ItemCategory?)
+                            Text("Select a category").tag(ItemCategory(name: "Uncategorized"))
                             ForEach(categories) { category in
                                 Text(category.name).tag(category as ItemCategory?)
                             }
@@ -74,10 +77,13 @@ struct AddItemView: View {
             .toolbar {
                 ToolbarItem() {
                     Button(action: {
-                        //isShowingSheet.toggle()
-                        
+                        let generator = UINotificationFeedbackGenerator()
+                        generator.notificationOccurred(.success)
+                        addItem()
+                        dismiss()
                     }) {
                         Text("Save")
+                        
                     }
                 }
             }
@@ -87,12 +93,15 @@ struct AddItemView: View {
     }
     
     private func addItem() {
+        let uncat = ItemCategory(name: "Uncategorized")
+        modelContext.insert(uncat)
+
         withAnimation {
             let currentDate = Date()
             let newItem = Item(
-                name: name,
-                location: location,
-                purchaseDate: purchaseDate,
+                name: self.name,
+                location: self.location,
+                purchaseDate: self.purchaseDate,
                 purchasePrice: 799.99,
                 dateAdded: currentDate,
                 currentValue: 500,
@@ -104,7 +113,9 @@ struct AddItemView: View {
                 archieve: false,
                 imageData: nil
             )
-            newItem.category = nil
+            newItem.category = itemCategory
+            print(newItem.location)
+            print(newItem.category)
             modelContext.insert(newItem)
         }
     }
@@ -114,19 +125,38 @@ struct AddItemView: View {
 
 struct AddCategoryView: View {
     @State private var category: String = ""
+    @State private var isInputAlertShown = false
     
+    @Query private var categories: [ItemCategory]
+    
+    @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
 
     var body: some View {
         VStack{
-            Text("Add Category")
-            TextField("Category", text: $category)
-            Button(action: {
-                     addCategory()
-                 }) {
-                     Label("Add Cat", systemImage: "plus")
-                 }
+                    Button(action: {
+                        //addCategory()
+                        //dismiss()
+                        isInputAlertShown = true
+                         }) {
+                             Label("Add", systemImage: "plus")
+                         }
+                            
+            List {
+                ForEach(categories) { cat in
+                    Text("\(cat.name)")
+                }
+                .onDelete(perform: deleteItems)
+            }
+            Spacer()
         }
+        .alert("Add New Category", isPresented: $isInputAlertShown) {
+            TextField("Enter Job Title", text: $category)
+                    .textInputAutocapitalization(.words)
+            Button("Add", action: addCategory)
+            Button("Cancel", role: .cancel) { }
+        }
+        
     }
     
     private func addCategory() {
@@ -135,12 +165,22 @@ struct AddCategoryView: View {
                 name: category
             )            
             modelContext.insert(newCat)
+            category = ""
+        }
+    }
+    
+    private func deleteItems(offsets: IndexSet) {
+        withAnimation {
+            for index in offsets {
+                modelContext.delete(categories[index])
+            }
         }
     }
 }
 
 #Preview {
     AddItemView()
+        .modelContainer(for: ItemCategory.self, inMemory: false)
 }
 //self.name = name
 //self.category = category

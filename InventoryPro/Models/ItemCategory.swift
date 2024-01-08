@@ -15,8 +15,8 @@ final class ItemCategory {
     // `.cascade` tells SwiftData to delete all animals contained in the
     // category when deleting it.
     @Relationship(deleteRule: .cascade, inverse: \Item.category)
-    let items = [Item]()
-    
+    var items = [Item]()
+
     init(name: String) {
         self.name = name
     }

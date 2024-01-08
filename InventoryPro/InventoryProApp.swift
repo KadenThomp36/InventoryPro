@@ -12,7 +12,7 @@ import SwiftData
 struct InventoryProApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            ItemCategory.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -28,6 +28,7 @@ struct InventoryProApp: App {
         WindowGroup {
             TabView{
                 ContentView()
+                    .navigationTitle("Categories")
                     .tabItem {
                         Label("Items", systemImage: "book")
                     }
