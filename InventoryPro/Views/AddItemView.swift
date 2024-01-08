@@ -35,31 +35,24 @@ struct AddItemView: View {
         NavigationSplitView{
             VStack{
                 Form {
-                    Section(header: Text("Notifications")) {
+                    Section(header: Text("Purchase Information")) {
                         
-                        TextField("name", text: $name)
-                        TextField("location", text: $location)
+                        TextField("Name", text: $name)
+                        TextField("Location", text: $location)
                         DatePicker("Purchase Date",
                                    selection: $purchaseDate,
                                    displayedComponents: [.date])
-                        
-                        
                         // TextField("Purchase Price", text: $purchasePrice)
-                        Picker(selection: $condition, label: Text("Condition")) {
-                            ForEach(Item.Condition.allCases, id: \.self) { condition in
-                                Text(condition.rawValue).tag(condition)
-                            }
-                        }
                     }
-                    Section(header: Text("Notifications")) {
+                    Section(header: Text("Catagorize")) {
                         HStack{
-                        Picker("Category", selection: $itemCategory) {
-                            Text("Select a category").tag(ItemCategory(name: "Uncategorized"))
-                            ForEach(categories) { category in
-                                Text(category.name).tag(category as ItemCategory?)
+                            Picker("Category", selection: $itemCategory) {
+                                Text("Select a category").tag(ItemCategory(name: "Uncategorized"))
+                                ForEach(categories) { category in
+                                    Text(category.name).tag(category as ItemCategory?)
+                                }
+                                
                             }
-
-                        }
                             Spacer()
                             Button("+") {
                                 isInputAlertShown = true
@@ -67,36 +60,36 @@ struct AddItemView: View {
                             .padding(.leading)
                             .font(.title)
                             .buttonStyle(BorderlessButtonStyle())
-
-                    }
-                        HStack {
-
-//                            .padding(.trailing, 40.0)
-
-    
+                            
+                        }
+                        Picker(selection: $condition, label: Text("Condition")) {
+                            ForEach(Item.Condition.allCases, id: \.self) { condition in
+                                Text(condition.rawValue).tag(condition)
+                            }
+                        }
                             NavigationLink {
                                 EditCategoryView()
                                     .navigationTitle("Edit Categories")
                             } label: {
                                 Text("Edit Categories")
                             }
-      
-                        }
-                        .buttonStyle(BorderlessButtonStyle())
-                        }
-                    
-                    
-                    Stepper(
-                        value: $quantity,
-                        in: range
-                    ) {
-                        Text("Quantity: \(quantity)x") // make this a text field instead
+
                     }
-                    TextField("name", text: $name)
-                    TextField("name", text: $name)
-                    TextField("name", text: $name)
-                    TextField("name", text: $name)
-                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                    Section(header: Text("Details")) {
+                        
+                        
+                        Stepper(
+                            value: $quantity,
+                            in: range
+                        ) {
+                            Text("Quantity: \(quantity)x") // make this a text field instead
+                        }
+                        TextField("name", text: $name)
+                        TextField("name", text: $name)
+                        TextField("name", text: $name)
+                        TextField("name", text: $name)
+                        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                    }
                     
                 }
             }
@@ -176,13 +169,13 @@ struct EditCategoryView: View {
     
     var body: some View {
         VStack{
-//            Button(action: {
-//                //addCategory()
-//                //dismiss()
-//                //isInputAlertShown = true
-//            }) {
-//                Label("Add", systemImage: "plus")
-//            }
+            //            Button(action: {
+            //                //addCategory()
+            //                //dismiss()
+            //                //isInputAlertShown = true
+            //            }) {
+            //                Label("Add", systemImage: "plus")
+            //            }
             
             List {
                 ForEach(categories) { cat in
