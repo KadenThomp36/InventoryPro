@@ -5,8 +5,8 @@
 //  Created by Kaden Thompson on 1/5/24.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct CategoryListView: View {
     @Environment(\.modelContext) private var modelContext
@@ -18,17 +18,15 @@ struct CategoryListView: View {
             ForEach(categories) { category in
                 Section(header: Text("\(category.name)")
                     .font(.title)
-                    .fontWeight(.black)
-                    .foregroundColor(Color.black)) {
+                    .fontWeight(.black))
+                {
                     NavigationLink {
                         ItemList(itemCategoryName: category.name)
                             .navigationTitle(category.name)
                     } label: {
-                        CategoryLinkView(category: category)
+                        CategoryLinkView(itemCategory: category)
                     }
                 }
-                
-
             }
             .onDelete(perform: deleteItems)
         }
@@ -36,12 +34,11 @@ struct CategoryListView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 EditButton()
             }
-            ToolbarItem {
-                
-            }
+            ToolbarItem {}
             ToolbarTitleMenu()
         }
     }
+
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {

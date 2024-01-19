@@ -27,12 +27,12 @@ struct ItemLinkView: View {
                 Spacer()
             }
         }
-
     }
 }
 
 #Preview {
-    var date = Date()
-    var newItem = Item(name: "PS5", location: "Bedroom", purchaseDate: date, purchasePrice: 50.0, dateAdded: date, currentValue: 50.0, quantity: 5, condition: Item.Condition.five, notes: "Good stuff", tag: "electronic", inUse: true, archieve: false, imageData: nil)
+    let date = Date()
+    let cat = ItemCategory(name: "Tech", icon: "folder.badge.questionmark")
+    let newItem = Item(name: "PS5", location: "Bedroom", purchaseDate: date, purchasePrice: 50.0, dateAdded: date, currentValue: 50.0, quantity: 5, condition: Item.Condition.five, notes: "Good stuff", tag: "electronic", inUse: true, archieve: false, category: cat, imageData: nil)
     return ItemLinkView(item: newItem)
 }

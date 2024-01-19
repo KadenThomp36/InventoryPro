@@ -5,18 +5,18 @@
 //  Created by Kaden Thompson on 1/3/24.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct InventoryProApp: App {
     var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            ItemCategory.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
         do {
+            let schema = Schema([
+                ItemCategory.self,
+            ])
+            let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
@@ -24,9 +24,8 @@ struct InventoryProApp: App {
     }()
 
     var body: some Scene {
-        
         WindowGroup {
-            TabView{
+            TabView {
                 ContentView()
                     .navigationTitle("Categories")
                     .tabItem {

@@ -5,24 +5,27 @@
 //  Created by Thompson, Kaden on 1/8/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct CategoryLinkView: View {
-    var category: ItemCategory
+
+    var itemCategory: ItemCategory
+
     var body: some View {
-        HStack{
+        HStack {
             VStack {
-                Image(systemName: "cloud.sun.rain.fill")
+                Image(systemName: itemCategory.icon)
                     .resizable(resizingMode: .stretch)
                     .frame(width: 100, height: 100)
-                Text("50 Items")
+                Text("\(itemCategory.items?.count ?? 0)")
             }
-            
+
             VStack {
                 Spacer()
-                
+
                 Text("Total Purchase Value:")
-                Text("$12,000")
+                Text( itemCategory.items?.lazy.map(\.purchasePrice).reduce(0) { $0 + Double($1) } ?? 0.0, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                 Spacer()
 
                 Text("Est. Resale Value:")
@@ -31,13 +34,11 @@ struct CategoryLinkView: View {
             }
         }
     }
-    
-    private func dataAggregator(){
-        
-    }
+
+    private func dataAggregator() {}
 }
 
 #Preview {
-    var cat = ItemCategory(name: "Apple")
-    return CategoryLinkView(category: cat)
+    let cat = ItemCategory(name: "Apple")
+    return CategoryLinkView(itemCategory: cat)
 }

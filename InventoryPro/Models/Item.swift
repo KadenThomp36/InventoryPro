@@ -12,7 +12,7 @@ import SwiftData
 final class Item {
     @Attribute(.unique) var id = UUID()
     @Attribute(.externalStorage) var imageData: Data?
-    var category: ItemCategory?
+    var category: ItemCategory
     var name: String
     var location: String
     var purchaseDate: Date
@@ -26,7 +26,7 @@ final class Item {
     var inUse: Bool
     var archieve: Bool
 
-    init(name: String, location: String, purchaseDate: Date, purchasePrice: Double, dateAdded: Date, currentValue: Double, quantity: Int, condition: Condition, notes: String,tag: String, inUse: Bool, archieve: Bool, imageData: Data?) {
+    init(name: String, location: String, purchaseDate: Date, purchasePrice: Double, dateAdded: Date, currentValue: Double, quantity: Int, condition: Condition, notes: String, tag: String, inUse: Bool, archieve: Bool, category: ItemCategory, imageData: Data?) {
         self.name = name
         self.location = location
         self.purchaseDate = purchaseDate
@@ -39,6 +39,7 @@ final class Item {
         self.tag = tag
         self.inUse = inUse
         self.archieve = archieve
+        self.category = category
         self.imageData = imageData ?? nil
     }
 }

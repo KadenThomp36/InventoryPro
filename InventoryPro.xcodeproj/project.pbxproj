@@ -16,6 +16,9 @@
 		316650EE2B464B7900C3012D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316650ED2B464B7900C3012D /* Item.swift */; };
 		316650F02B464B7B00C3012D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316650EF2B464B7B00C3012D /* Assets.xcassets */; };
 		316650F32B464B7B00C3012D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316650F22B464B7B00C3012D /* Preview Assets.xcassets */; };
+		31B37F0D2B560866007628F9 /* EditCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B37F0C2B560866007628F9 /* EditCategoryView.swift */; };
+		31B37F0F2B560FE8007628F9 /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B37F0E2B560FE8007628F9 /* AddCategoryView.swift */; };
+		31B37F122B561161007628F9 /* SymbolPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 31B37F112B561161007628F9 /* SymbolPicker */; };
 		31BDA5A32B470CD700211300 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BDA5A22B470CD700211300 /* AddItemView.swift */; };
 		31BDA5A62B4748F800211300 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BDA5A52B4748F700211300 /* ItemCategory.swift */; };
 		4FD529C92B4C95EF00165276 /* CategoryLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD529C82B4C95EF00165276 /* CategoryLinkView.swift */; };
@@ -32,6 +35,8 @@
 		316650ED2B464B7900C3012D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		316650EF2B464B7B00C3012D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		316650F22B464B7B00C3012D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		31B37F0C2B560866007628F9 /* EditCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryView.swift; sourceTree = "<group>"; };
+		31B37F0E2B560FE8007628F9 /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
 		31BDA5A22B470CD700211300 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		31BDA5A52B4748F700211300 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
 		4FD529C82B4C95EF00165276 /* CategoryLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLinkView.swift; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31B37F122B561161007628F9 /* SymbolPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,11 +103,13 @@
 		31BDA5A12B470CA800211300 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				316650EB2B464B7900C3012D /* ContentView.swift */,
 				31BDA5A22B470CD700211300 /* AddItemView.swift */,
+				31B37F0E2B560FE8007628F9 /* AddCategoryView.swift */,
+				316650EB2B464B7900C3012D /* ContentView.swift */,
 				3106B81E2B4886F8006B4672 /* ItemListView.swift */,
 				3106B8202B489E04006B4672 /* CategoryListView.swift */,
 				3106B8222B4B8741006B4672 /* ItemDetailView.swift */,
+				31B37F0C2B560866007628F9 /* EditCategoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,6 +139,9 @@
 			dependencies = (
 			);
 			name = InventoryPro;
+			packageProductDependencies = (
+				31B37F112B561161007628F9 /* SymbolPicker */,
+			);
 			productName = InventoryPro;
 			productReference = 316650E62B464B7900C3012D /* InventoryPro.app */;
 			productType = "com.apple.product-type.application";
@@ -159,6 +170,9 @@
 				Base,
 			);
 			mainGroup = 316650DD2B464B7900C3012D;
+			packageReferences = (
+				31B37F102B561161007628F9 /* XCRemoteSwiftPackageReference "SymbolPicker" */,
+			);
 			productRefGroup = 316650E72B464B7900C3012D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -191,9 +205,11 @@
 				316650EA2B464B7900C3012D /* InventoryProApp.swift in Sources */,
 				3106B8232B4B8741006B4672 /* ItemDetailView.swift in Sources */,
 				31BDA5A62B4748F800211300 /* ItemCategory.swift in Sources */,
+				31B37F0F2B560FE8007628F9 /* AddCategoryView.swift in Sources */,
 				3106B81F2B4886F8006B4672 /* ItemListView.swift in Sources */,
 				3106B8212B489E04006B4672 /* CategoryListView.swift in Sources */,
 				31BDA5A32B470CD700211300 /* AddItemView.swift in Sources */,
+				31B37F0D2B560866007628F9 /* EditCategoryView.swift in Sources */,
 				31132A5A2B4C32CA00605541 /* ItemLinkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +416,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		31B37F102B561161007628F9 /* XCRemoteSwiftPackageReference "SymbolPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/xnth97/SymbolPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		31B37F112B561161007628F9 /* SymbolPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31B37F102B561161007628F9 /* XCRemoteSwiftPackageReference "SymbolPicker" */;
+			productName = SymbolPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 316650DE2B464B7900C3012D /* Project object */;
 }

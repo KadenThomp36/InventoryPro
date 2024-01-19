@@ -14,9 +14,9 @@
             filePath = "InventoryPro/Views/AddItemView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "addItem()"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "addCategory()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -48,6 +48,54 @@
                   startingLineNumber = "113"
                   endingLineNumber = "113"
                   offsetFromSymbolStart = "2112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CFE89674-F1E5-46A7-9BA9-5559FE587AE2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../../var/folders/lg/53kp8b2n4wl5_dzx0hs4t97r0000gn/T/swift-generated-sources/@__swiftmacro_12InventoryPro16CategoryLinkViewV04itemC0AcA04ItemC0C_tcfc9PredicatefMf_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "init(itemCategory:)"
+            landmarkType = "37">
+            <Locations>
+               <Location
+                  uuid = "CFE89674-F1E5-46A7-9BA9-5559FE587AE2 - 7e9368e2b6019cfc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InventoryPro.CategoryLinkView.init(itemCategory: InventoryPro.ItemCategory) -&gt; InventoryPro.CategoryLinkView"
+                  moduleName = "InventoryPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/lg/53kp8b2n4wl5_dzx0hs4t97r0000gn/T/swift-generated-sources/@__swiftmacro_12InventoryPro16CategoryLinkViewV04itemC0AcA04ItemC0C_tcfc9PredicatefMf_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1"
+                  endingLineNumber = "1"
+                  offsetFromSymbolStart = "1164">
+               </Location>
+               <Location
+                  uuid = "CFE89674-F1E5-46A7-9BA9-5559FE587AE2 - ba81dacf2ef1c300"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Foundation.PredicateExpressions.Variable&lt;InventoryPro.Item&gt;) -&gt; any Foundation.StandardPredicateExpression&lt;Self.Foundation.PredicateExpression.Output == Swift.Bool&gt; in InventoryPro.CategoryLinkView.init(itemCategory: InventoryPro.ItemCategory) -&gt; InventoryPro.CategoryLinkView"
+                  moduleName = "InventoryPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/lg/53kp8b2n4wl5_dzx0hs4t97r0000gn/T/swift-generated-sources/@__swiftmacro_12InventoryPro16CategoryLinkViewV04itemC0AcA04ItemC0C_tcfc9PredicatefMf_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "5"
+                  endingLineNumber = "5"
+                  offsetFromSymbolStart = "400">
                </Location>
             </Locations>
          </BreakpointContent>
