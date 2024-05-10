@@ -1,56 +1,72 @@
+////
+////  EditCategoryView.swift
+////  InventoryPro
+////
+////  Created by Kaden Thompson on 1/15/24.
+////
 //
-//  EditCategoryView.swift
-//  InventoryPro
+//import SwiftData
+//import SwiftUI
 //
-//  Created by Kaden Thompson on 1/15/24.
+//struct EditCategoryView: View {
+//    @Query private var categories: [Session]
+//    
+//    @Binding var itemCategory: Session?
 //
-
-import SwiftData
-import SwiftUI
-
-struct EditCategoryView: View {
-    @Query private var categories: [ItemCategory]
-
-    @Environment(\.dismiss) private var dismiss
-    @Environment(\.modelContext) private var modelContext
-
-    var body: some View {
-        NavigationView {
-            VStack {
-                //            Button(action: {
-                //                //addCategory()
-                //                //dismiss()
-                //                //isInputAlertShown = true
-                //            }) {
-                //                Label("Add", systemImage: "plus")
-                //            }
-
-                List {
-                    NavigationLink {
-                        AddCategoryView()
-                            .navigationTitle("Add Category")
-                    } label: {
-                        Text("Add Category")
-                    }
-                    ForEach(categories) { cat in
-                        Text("\(cat.name)")
-                    }
-                    .onDelete(perform: deleteItems)
-                }
-                Spacer()
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(categories[index])
-            }
-        }
-    }
-}
-
-#Preview {
-    EditCategoryView()
-}
+//    @Environment(\.dismiss) private var dismiss
+//    @Environment(\.modelContext) private var modelContext
+//    
+//    @State private var searchText = ""
+//
+//    var body: some View {
+//
+//
+//                List {
+//                    ForEach(searchResults, id: \.self) { cat in
+//                        Button(action: {
+//                            itemCategory = cat
+//                            dismiss()
+//                        }) {
+//                            HStack {
+//                                Image(systemName: cat.icon)
+//                                Text("\(cat.name)")
+//                                    .foregroundStyle(.black)
+//                            }
+//       
+//                        }
+//                    }
+//                    .onDelete(perform: deleteItems)
+//                    
+//                    NavigationLink {
+//                        AddCategoryView()
+//                            .navigationTitle("Add Category")
+//                    } label: {
+//                        Text("Add Category")
+//                    }
+//                }
+//                .searchable(text: $searchText)  
+//                Spacer()
+//
+//            }
+//    
+//    var searchResults: [Session] {
+//        if searchText.isEmpty {
+//            return categories
+//        } else {
+//            return categories.filter { $0.name.contains(searchText) }
+//        }
+//    }
+//
+//    private func deleteItems(offsets: IndexSet) {
+//        withAnimation {
+//            for index in offsets {
+//                modelContext.delete(categories[index])
+//            }
+//        }
+//    }
+//}
+//
+////#Preview {
+////    @State var itemcat: ItemCategory
+////    EditCategoryView(itemCategory: $itemcat)
+////}

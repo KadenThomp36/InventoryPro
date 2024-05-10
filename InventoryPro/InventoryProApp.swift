@@ -10,10 +10,14 @@ import SwiftUI
 
 @main
 struct InventoryProApp: App {
+    @StateObject private var session = SessionManager()
+
     var sharedModelContainer: ModelContainer = {
         do {
             let schema = Schema([
-                ItemCategory.self,
+                Profile.self,
+                Session.self,
+                Location.self,
             ])
             let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,13 +29,8 @@ struct InventoryProApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TabView {
-                ContentView()
-                    .navigationTitle("Categories")
-                    .tabItem {
-                        Label("Items", systemImage: "book")
-                    }
-            }
+            MainAppView()
+                .environmentObject(session)
         }
         .modelContainer(sharedModelContainer)
     }

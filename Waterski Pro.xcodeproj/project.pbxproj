@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3106B81F2B4886F8006B4672 /* PassListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B81E2B4886F8006B4672 /* PassListView.swift */; };
+		3106B8212B489E04006B4672 /* SessionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B8202B489E04006B4672 /* SessionListView.swift */; };
+		3106B8232B4B8741006B4672 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B8222B4B8741006B4672 /* ItemDetailView.swift */; };
+		31132A5A2B4C32CA00605541 /* ItemLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31132A592B4C32CA00605541 /* ItemLinkView.swift */; };
+		3115DD8D2B632FBA0067BF7B /* ItemTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3115DD8C2B632FBA0067BF7B /* ItemTag.swift */; };
+		3115DD8F2B6336BB0067BF7B /* EditTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3115DD8E2B6336BB0067BF7B /* EditTagView.swift */; };
+		311B9FD42BD74AB9003DAF4E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FD32BD74AB9003DAF4E /* SettingsView.swift */; };
+		311B9FD62BDB2D1A003DAF4E /* Scoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FD52BDB2D1A003DAF4E /* Scoring.swift */; };
+		311B9FD82BDC2008003DAF4E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FD72BDC2008003DAF4E /* OnboardingView.swift */; };
+		311B9FDA2BDC2B85003DAF4E /* OnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FD92BDC2B85003DAF4E /* OnboardingInfoView.swift */; };
+		311B9FDC2BDC2CFD003DAF4E /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FDB2BDC2CFD003DAF4E /* OnboardingManager.swift */; };
+		311B9FDE2BDC349C003DAF4E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FDD2BDC349C003DAF4E /* SessionManager.swift */; };
+		311B9FE02BDC361D003DAF4E /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FDF2BDC361D003DAF4E /* MainAppView.swift */; };
+		311B9FE32BDF2058003DAF4E /* UsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FE22BDF2058003DAF4E /* UsernameView.swift */; };
+		311B9FE52BDF226C003DAF4E /* AgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FE42BDF226C003DAF4E /* AgeView.swift */; };
+		311B9FE92BDF2E7D003DAF4E /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FE82BDF2E7D003DAF4E /* ProfilePicture.swift */; };
+		311B9FEB2BDF33F6003DAF4E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FEA2BDF33F6003DAF4E /* Profile.swift */; };
+		311B9FED2BDFEE3F003DAF4E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FEC2BDFEE3F003DAF4E /* SignUpView.swift */; };
+		311B9FEF2BDFEEEF003DAF4E /* RegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FEE2BDFEEEF003DAF4E /* RegistrationManager.swift */; };
+		311B9FF12BE07D66003DAF4E /* TermsAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FF02BE07D66003DAF4E /* TermsAgreementView.swift */; };
+		311B9FF32BE18753003DAF4E /* SpeedPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FF22BE18753003DAF4E /* SpeedPreferenceView.swift */; };
+		315676BB2BB5BC400069B669 /* SkiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315676BA2BB5BC400069B669 /* SkiViewModel.swift */; };
+		316650EA2B464B7900C3012D /* InventoryProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316650E92B464B7900C3012D /* InventoryProApp.swift */; };
+		316650EC2B464B7900C3012D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316650EB2B464B7900C3012D /* HomeView.swift */; };
+		316650EE2B464B7900C3012D /* Pass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316650ED2B464B7900C3012D /* Pass.swift */; };
+		316650F02B464B7B00C3012D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316650EF2B464B7B00C3012D /* Assets.xcassets */; };
+		316650F32B464B7B00C3012D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316650F22B464B7B00C3012D /* Preview Assets.xcassets */; };
+		318A23782BA1DFA500018C4C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A23772BA1DFA500018C4C /* MapView.swift */; };
+		318A237A2BA1E30100018C4C /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A23792BA1E30100018C4C /* LocationDataManager.swift */; };
+		3192C2F22BEB0CB600BD9251 /* MapViewDynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3192C2F12BEB0CB600BD9251 /* MapViewDynamic.swift */; };
+		31A59F4E2BC0478E00B464A0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A59F4D2BC0478E00B464A0 /* Location.swift */; };
+		31B37F0D2B560866007628F9 /* EditCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B37F0C2B560866007628F9 /* EditCategoryView.swift */; };
+		31B37F0F2B560FE8007628F9 /* RecordSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B37F0E2B560FE8007628F9 /* RecordSessionView.swift */; };
+		31B37F122B561161007628F9 /* SymbolPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 31B37F112B561161007628F9 /* SymbolPicker */; };
+		31BDA5A32B470CD700211300 /* AddPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BDA5A22B470CD700211300 /* AddPassView.swift */; };
+		31BDA5A62B4748F800211300 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BDA5A52B4748F700211300 /* Session.swift */; };
+		31D005A32B69D49C009A69CE /* AddTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D005A22B69D49C009A69CE /* AddTagView.swift */; };
+		31D005A62B69DCC5009A69CE /* Drops in Frameworks */ = {isa = PBXBuildFile; productRef = 31D005A52B69DCC5009A69CE /* Drops */; };
+		31D6B3922BD737DA00F48259 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6B3912BD737DA00F48259 /* Helpers.swift */; };
+		31FD04E02BE463B70053C205 /* LengthPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD04DF2BE463B70053C205 /* LengthPreferenceView.swift */; };
+		4FD529C92B4C95EF00165276 /* SessionLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD529C82B4C95EF00165276 /* SessionLinkView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3106B81E2B4886F8006B4672 /* PassListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassListView.swift; sourceTree = "<group>"; };
+		3106B8202B489E04006B4672 /* SessionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListView.swift; sourceTree = "<group>"; };
+		3106B8222B4B8741006B4672 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		31132A592B4C32CA00605541 /* ItemLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLinkView.swift; sourceTree = "<group>"; };
+		3115DD8C2B632FBA0067BF7B /* ItemTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTag.swift; sourceTree = "<group>"; };
+		3115DD8E2B6336BB0067BF7B /* EditTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTagView.swift; sourceTree = "<group>"; };
+		311B9FD32BD74AB9003DAF4E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		311B9FD52BDB2D1A003DAF4E /* Scoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoring.swift; sourceTree = "<group>"; };
+		311B9FD72BDC2008003DAF4E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		311B9FD92BDC2B85003DAF4E /* OnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoView.swift; sourceTree = "<group>"; };
+		311B9FDB2BDC2CFD003DAF4E /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
+		311B9FDD2BDC349C003DAF4E /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		311B9FDF2BDC361D003DAF4E /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
+		311B9FE22BDF2058003DAF4E /* UsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameView.swift; sourceTree = "<group>"; };
+		311B9FE42BDF226C003DAF4E /* AgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeView.swift; sourceTree = "<group>"; };
+		311B9FE82BDF2E7D003DAF4E /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
+		311B9FEA2BDF33F6003DAF4E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		311B9FEC2BDFEE3F003DAF4E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		311B9FEE2BDFEEEF003DAF4E /* RegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationManager.swift; sourceTree = "<group>"; };
+		311B9FF02BE07D66003DAF4E /* TermsAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAgreementView.swift; sourceTree = "<group>"; };
+		311B9FF22BE18753003DAF4E /* SpeedPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedPreferenceView.swift; sourceTree = "<group>"; };
+		315676BA2BB5BC400069B669 /* SkiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiViewModel.swift; sourceTree = "<group>"; };
+		316650E62B464B7900C3012D /* Waterski Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waterski Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		316650E92B464B7900C3012D /* InventoryProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryProApp.swift; sourceTree = "<group>"; };
+		316650EB2B464B7900C3012D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		316650ED2B464B7900C3012D /* Pass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pass.swift; sourceTree = "<group>"; };
+		316650EF2B464B7B00C3012D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		316650F22B464B7B00C3012D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		318A23772BA1DFA500018C4C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		318A23792BA1E30100018C4C /* LocationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
+		3192C2F12BEB0CB600BD9251 /* MapViewDynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewDynamic.swift; sourceTree = "<group>"; };
+		31A59F4D2BC0478E00B464A0 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		31B37F0C2B560866007628F9 /* EditCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryView.swift; sourceTree = "<group>"; };
+		31B37F0E2B560FE8007628F9 /* RecordSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSessionView.swift; sourceTree = "<group>"; };
+		31BDA5A22B470CD700211300 /* AddPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPassView.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		31BDA5A52B4748F700211300 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		31D005A22B69D49C009A69CE /* AddTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTagView.swift; sourceTree = "<group>"; };
+		31D6B3912BD737DA00F48259 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		31FD04DF2BE463B70053C205 /* LengthPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthPreferenceView.swift; sourceTree = "<group>"; };
+		4FD529C82B4C95EF00165276 /* SessionLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionLinkView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		316650E32B464B7900C3012D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31B37F122B561161007628F9 /* SymbolPicker in Frameworks */,
+				31D005A62B69DCC5009A69CE /* Drops in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31132A582B4C32A000605541 /* List Views */ = {
+			isa = PBXGroup;
+			children = (
+				31132A592B4C32CA00605541 /* ItemLinkView.swift */,
+				4FD529C82B4C95EF00165276 /* SessionLinkView.swift */,
+			);
+			path = "List Views";
+			sourceTree = "<group>";
+		};
+		311B9FE12BDF2021003DAF4E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				311B9FDD2BDC349C003DAF4E /* SessionManager.swift */,
+				311B9FD72BDC2008003DAF4E /* OnboardingView.swift */,
+				311B9FDB2BDC2CFD003DAF4E /* OnboardingManager.swift */,
+				311B9FD92BDC2B85003DAF4E /* OnboardingInfoView.swift */,
+				311B9FE22BDF2058003DAF4E /* UsernameView.swift */,
+				311B9FE42BDF226C003DAF4E /* AgeView.swift */,
+				311B9FEC2BDFEE3F003DAF4E /* SignUpView.swift */,
+				311B9FEE2BDFEEEF003DAF4E /* RegistrationManager.swift */,
+				311B9FF02BE07D66003DAF4E /* TermsAgreementView.swift */,
+				311B9FF22BE18753003DAF4E /* SpeedPreferenceView.swift */,
+				31FD04DF2BE463B70053C205 /* LengthPreferenceView.swift */,
+				311B9FE82BDF2E7D003DAF4E /* ProfilePicture.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		316650DD2B464B7900C3012D = {
+			isa = PBXGroup;
+			children = (
+				316650E82B464B7900C3012D /* InventoryPro */,
+				316650E72B464B7900C3012D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		316650E72B464B7900C3012D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				316650E62B464B7900C3012D /* Waterski Pro.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		316650E82B464B7900C3012D /* InventoryPro */ = {
+			isa = PBXGroup;
+			children = (
+				311B9FE12BDF2021003DAF4E /* Onboarding */,
+				31D6B3902BD737C600F48259 /* Helpers */,
+				31132A582B4C32A000605541 /* List Views */,
+				31BDA5A42B4748C600211300 /* Models */,
+				31BDA5A12B470CA800211300 /* Views */,
+				316650E92B464B7900C3012D /* InventoryProApp.swift */,
+				316650EF2B464B7B00C3012D /* Assets.xcassets */,
+				316650F12B464B7B00C3012D /* Preview Content */,
+				318A23792BA1E30100018C4C /* LocationDataManager.swift */,
+			);
+			path = InventoryPro;
+			sourceTree = "<group>";
+		};
+		316650F12B464B7B00C3012D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				316650F22B464B7B00C3012D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		31BDA5A12B470CA800211300 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				316650EB2B464B7900C3012D /* HomeView.swift */,
+				311B9FDF2BDC361D003DAF4E /* MainAppView.swift */,
+				31BDA5A22B470CD700211300 /* AddPassView.swift */,
+				3106B81E2B4886F8006B4672 /* PassListView.swift */,
+				3106B8222B4B8741006B4672 /* ItemDetailView.swift */,
+				31B37F0E2B560FE8007628F9 /* RecordSessionView.swift */,
+				31D005A22B69D49C009A69CE /* AddTagView.swift */,
+				3106B8202B489E04006B4672 /* SessionListView.swift */,
+				31B37F0C2B560866007628F9 /* EditCategoryView.swift */,
+				3115DD8E2B6336BB0067BF7B /* EditTagView.swift */,
+				318A23772BA1DFA500018C4C /* MapView.swift */,
+				3192C2F12BEB0CB600BD9251 /* MapViewDynamic.swift */,
+				311B9FD32BD74AB9003DAF4E /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		31BDA5A42B4748C600211300 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				316650ED2B464B7900C3012D /* Pass.swift */,
+				31BDA5A52B4748F700211300 /* Session.swift */,
+				3115DD8C2B632FBA0067BF7B /* ItemTag.swift */,
+				315676BA2BB5BC400069B669 /* SkiViewModel.swift */,
+				31A59F4D2BC0478E00B464A0 /* Location.swift */,
+				311B9FEA2BDF33F6003DAF4E /* Profile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		31D6B3902BD737C600F48259 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				31D6B3912BD737DA00F48259 /* Helpers.swift */,
+				311B9FD52BDB2D1A003DAF4E /* Scoring.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		316650E52B464B7900C3012D /* Waterski Pro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 316650F62B464B7B00C3012D /* Build configuration list for PBXNativeTarget "Waterski Pro" */;
+			buildPhases = (
+				316650E22B464B7900C3012D /* Sources */,
+				316650E32B464B7900C3012D /* Frameworks */,
+				316650E42B464B7900C3012D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Waterski Pro";
+			packageProductDependencies = (
+				31B37F112B561161007628F9 /* SymbolPicker */,
+				31D005A52B69DCC5009A69CE /* Drops */,
+			);
+			productName = InventoryPro;
+			productReference = 316650E62B464B7900C3012D /* Waterski Pro.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		316650DE2B464B7900C3012D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					316650E52B464B7900C3012D = {
+						CreatedOnToolsVersion = 15.1;
+					};
+				};
+			};
+			buildConfigurationList = 316650E12B464B7900C3012D /* Build configuration list for PBXProject "Waterski Pro" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 316650DD2B464B7900C3012D;
+			packageReferences = (
+				31B37F102B561161007628F9 /* XCRemoteSwiftPackageReference "SymbolPicker" */,
+				31D005A42B69DCC4009A69CE /* XCRemoteSwiftPackageReference "Drops" */,
+			);
+			productRefGroup = 316650E72B464B7900C3012D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				316650E52B464B7900C3012D /* Waterski Pro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		316650E42B464B7900C3012D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				316650F32B464B7B00C3012D /* Preview Assets.xcassets in Resources */,
+				316650F02B464B7B00C3012D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		316650E22B464B7900C3012D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				311B9FD42BD74AB9003DAF4E /* SettingsView.swift in Sources */,
+				4FD529C92B4C95EF00165276 /* SessionLinkView.swift in Sources */,
+				318A23782BA1DFA500018C4C /* MapView.swift in Sources */,
+				3115DD8F2B6336BB0067BF7B /* EditTagView.swift in Sources */,
+				31D6B3922BD737DA00F48259 /* Helpers.swift in Sources */,
+				316650EC2B464B7900C3012D /* HomeView.swift in Sources */,
+				316650EE2B464B7900C3012D /* Pass.swift in Sources */,
+				316650EA2B464B7900C3012D /* InventoryProApp.swift in Sources */,
+				311B9FE92BDF2E7D003DAF4E /* ProfilePicture.swift in Sources */,
+				311B9FEB2BDF33F6003DAF4E /* Profile.swift in Sources */,
+				3192C2F22BEB0CB600BD9251 /* MapViewDynamic.swift in Sources */,
+				311B9FE32BDF2058003DAF4E /* UsernameView.swift in Sources */,
+				3106B8232B4B8741006B4672 /* ItemDetailView.swift in Sources */,
+				31BDA5A62B4748F800211300 /* Session.swift in Sources */,
+				311B9FF12BE07D66003DAF4E /* TermsAgreementView.swift in Sources */,
+				31B37F0F2B560FE8007628F9 /* RecordSessionView.swift in Sources */,
+				3106B81F2B4886F8006B4672 /* PassListView.swift in Sources */,
+				311B9FDE2BDC349C003DAF4E /* SessionManager.swift in Sources */,
+				31FD04E02BE463B70053C205 /* LengthPreferenceView.swift in Sources */,
+				311B9FE02BDC361D003DAF4E /* MainAppView.swift in Sources */,
+				311B9FE52BDF226C003DAF4E /* AgeView.swift in Sources */,
+				31D005A32B69D49C009A69CE /* AddTagView.swift in Sources */,
+				3106B8212B489E04006B4672 /* SessionListView.swift in Sources */,
+				315676BB2BB5BC400069B669 /* SkiViewModel.swift in Sources */,
+				311B9FF32BE18753003DAF4E /* SpeedPreferenceView.swift in Sources */,
+				31BDA5A32B470CD700211300 /* AddPassView.swift in Sources */,
+				31A59F4E2BC0478E00B464A0 /* Location.swift in Sources */,
+				311B9FDC2BDC2CFD003DAF4E /* OnboardingManager.swift in Sources */,
+				311B9FEF2BDFEEEF003DAF4E /* RegistrationManager.swift in Sources */,
+				31B37F0D2B560866007628F9 /* EditCategoryView.swift in Sources */,
+				31132A5A2B4C32CA00605541 /* ItemLinkView.swift in Sources */,
+				311B9FD62BDB2D1A003DAF4E /* Scoring.swift in Sources */,
+				318A237A2BA1E30100018C4C /* LocationDataManager.swift in Sources */,
+				311B9FED2BDFEE3F003DAF4E /* SignUpView.swift in Sources */,
+				311B9FDA2BDC2B85003DAF4E /* OnboardingInfoView.swift in Sources */,
+				311B9FD82BDC2008003DAF4E /* OnboardingView.swift in Sources */,
+				3115DD8D2B632FBA0067BF7B /* ItemTag.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		316650F42B464B7B00C3012D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		316650F52B464B7B00C3012D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		316650F72B464B7B00C3012D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"InventoryPro/Preview Content\"";
+				DEVELOPMENT_TEAM = GTG5AKK862;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "WaterskiPro wants your location to store this session";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kdenemtee.InventoryPro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		316650F82B464B7B00C3012D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"InventoryPro/Preview Content\"";
+				DEVELOPMENT_TEAM = GTG5AKK862;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "WaterskiPro wants your location to store this session";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kdenemtee.InventoryPro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		316650E12B464B7900C3012D /* Build configuration list for PBXProject "Waterski Pro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				316650F42B464B7B00C3012D /* Debug */,
+				316650F52B464B7B00C3012D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		316650F62B464B7B00C3012D /* Build configuration list for PBXNativeTarget "Waterski Pro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				316650F72B464B7B00C3012D /* Debug */,
+				316650F82B464B7B00C3012D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		31B37F102B561161007628F9 /* XCRemoteSwiftPackageReference "SymbolPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/xnth97/SymbolPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
+			};
+		};
+		31D005A42B69DCC4009A69CE /* XCRemoteSwiftPackageReference "Drops" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/omaralbeik/Drops.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		31B37F112B561161007628F9 /* SymbolPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31B37F102B561161007628F9 /* XCRemoteSwiftPackageReference "SymbolPicker" */;
+			productName = SymbolPicker;
+		};
+		31D005A52B69DCC5009A69CE /* Drops */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 31D005A42B69DCC4009A69CE /* XCRemoteSwiftPackageReference "Drops" */;
+			productName = Drops;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 316650DE2B464B7900C3012D /* Project object */;
+}
