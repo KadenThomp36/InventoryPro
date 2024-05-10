@@ -137,7 +137,7 @@
 		316650DD2B464B7900C3012D = {
 			isa = PBXGroup;
 			children = (
-				316650E82B464B7900C3012D /* InventoryPro */,
+				316650E82B464B7900C3012D /* WaterskiPro */,
 				316650E72B464B7900C3012D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,7 +150,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		316650E82B464B7900C3012D /* InventoryPro */ = {
+		316650E82B464B7900C3012D /* WaterskiPro */ = {
 			isa = PBXGroup;
 			children = (
 				311B9FE12BDF2021003DAF4E /* Onboarding */,
@@ -163,7 +163,7 @@
 				316650F12B464B7B00C3012D /* Preview Content */,
 				318A23792BA1E30100018C4C /* LocationDataManager.swift */,
 			);
-			path = InventoryPro;
+			path = WaterskiPro;
 			sourceTree = "<group>";
 		};
 		316650F12B464B7B00C3012D /* Preview Content */ = {
@@ -463,7 +463,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"InventoryPro/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"WaterskiPro/Preview Content\"";
 				DEVELOPMENT_TEAM = GTG5AKK862;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -493,7 +493,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"InventoryPro/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"WaterskiPro/Preview Content\"";
 				DEVELOPMENT_TEAM = GTG5AKK862;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
