@@ -1,25 +1,22 @@
 //
-//  AddItemView.swift
+//  ItemDetailView.swift
 //  InventoryPro
 //
-//  Created by Kaden Thompson on 1/4/24.
+//  Created by Kaden Thompson on 1/7/24.
 //
 
-import Combine
-import PhotosUI
-import SwiftData
 import SwiftUI
 
-struct AddPassView: View {
+struct PassDetailView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    
+
     @AppStorage("speed") private var speed = "mph"
     @AppStorage("length") private var length = "feet"
-    
-    @ObservedObject var session: Session
 
-    @State private var timestamp: Date = Date()
+    @State var pass: Pass
+    @State var firstAppear = false
+
     @State private var bouys: Double = 3
     @State private var ropeLength: Double = 0
     @State private var boatSpeed: Int = 0
@@ -86,23 +83,15 @@ struct AddPassView: View {
                                 UIImpactFeedbackGenerator(style: .soft).impactOccurred()
                             }
                             .onAppear {
-                                if session.passes.isEmpty {
-                                    print("No passes added, reading from pref")
-                                    boatSpeed = session.profile!.prefSpeed
-                                    ropeLength = session.profile!.prefLength
-                                } else {
-                                    let sortedPasses = session.passes.sorted(by: { $0.timestamp > $1.timestamp })
-                                    boatSpeed = sortedPasses.first!.boatSpeed
-                                    ropeLength = Double(sortedPasses.first!.ropeLength)
+                                if firstAppear == false {
+                                    bouys = pass.bouys
+                                    ropeLength = Double(pass.ropeLength)
+                                    boatSpeed = pass.boatSpeed
+                                    completion = pass.completion
                                 }
-                                let thumbImage = UIImage(systemName: "circle.fill")
-                                UISlider.appearance().setThumbImage(thumbImage, for: .normal)
                             }
 
                             Picker(selection: $completion, label: Text("Completion")) {
-//                                ForEach(Pass.Completion.allCases, id: \.self) { completion in
-//                                    Text(completion.rawValue).tag(completion)
-//                                }
                                 if bouys == 6 {
                                     Text(Pass.Completion.clean.rawValue).tag(Pass.Completion.clean)
                                     Text(Pass.Completion.sloppy.rawValue).tag(Pass.Completion.sloppy)
@@ -111,7 +100,6 @@ struct AddPassView: View {
                                     Text(Pass.Completion.failedNoFall.rawValue).tag(Pass.Completion.failedNoFall)
                                 }
                             }
-                            .pickerStyle(.navigationLink)
                         }
                     }
                     .scrollDisabled(true)
@@ -119,7 +107,7 @@ struct AddPassView: View {
                 Button {
                     let generator = UINotificationFeedbackGenerator()
                     generator.notificationOccurred(.success)
-                    addPass()
+                    updatePass()
                     dismiss()
                 } label: {
                     Text("Save")
@@ -135,24 +123,17 @@ struct AddPassView: View {
         }
     }
 
-    private func addPass() {
-        let currentDate = Date()
-        let newPass: Pass = Pass(
-            session: session,
-            timestamp: currentDate,
-            bouys: bouys,
-            ropeLength: Int(ropeLength),
-            boatSpeed: boatSpeed,
-            completion: completion,
-            pointsRaw: getZBS(rLength: Int(ropeLength), bSpeed: boatSpeed, bouys: bouys)
-        )
-        newPass.notes = ""
-        session.passes.append(newPass)
+    private func updatePass() {
+        pass.bouys = bouys
+        pass.ropeLength = Int(ropeLength)
+        pass.boatSpeed = boatSpeed
+        pass.completion = completion
     }
 }
 
 #Preview {
     let profile = Profile(name: "Kaden", gender: .female, dateOfBirth: Date(timeIntervalSinceReferenceDate: 0), profilePicture: Data(), prefSpeed: 0, prefLength: 0)
-    let session1 = Session(startTime: Date(), sessionType: .practice, profile: profile)
-    return AddPassView(session: session1)
+    let session = Session(startTime: Date(), sessionType: .practice, profile: profile)
+    let pass = Pass(session: session, timestamp: Date(), bouys: 3.0, ropeLength: boatSpeedRoapLengthRAW[4], boatSpeed: boatSpeedRoapLengthRAW[3], completion: .clean, pointsRaw: 50.0)
+    return PassDetailView(pass: pass)
 }

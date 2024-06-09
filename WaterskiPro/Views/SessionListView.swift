@@ -11,7 +11,7 @@ import SwiftUI
 struct SessionView: View {
     @Environment(\.modelContext) var modelContext
 
-    @AppStorage("activeUser") private var activeUser: String?
+    @AppStorage("activeUser") private var activeUser: UUID?
 
     @Binding var user: Profile
     @Binding var tabSelection: Int
@@ -73,14 +73,6 @@ extension SessionView {
                             .onDelete(perform: deleteItems)
                         }
                 }
-            }
-
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {}
-                ToolbarTitleMenu()
             }
         }
     }

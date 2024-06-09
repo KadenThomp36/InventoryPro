@@ -5,21 +5,22 @@
 //  Created by Kaden Thompson on 4/28/24.
 //
 
-import SwiftUI
 import Foundation
+import SwiftUI
 
 struct AgeView: View {
     @Binding var dateOfBirth: Date
-    //@Binding var isScrollEnabled: Bool
+    // @Binding var isScrollEnabled: Bool
     @Binding var isShowingDatePicker: Bool
     @State var selectionMade = false
     let action: () -> Void
-    
+
     let dateFormatter: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "MM/dd/yyyy"
-            return formatter
-        }()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        return formatter
+    }()
+
     @State private var birthDate = Date()
 
     var body: some View {
@@ -41,20 +42,21 @@ struct AgeView: View {
                 .padding(.bottom, 20)
             Spacer()
             VStack {
-                Button(action: { isShowingDatePicker = true}, label: {
+                Button(action: {
+                    isShowingDatePicker = true
+                }, label: {
                     Text("\(selectionMade ? dateFormatter.string(from: dateOfBirth) : "DD/MM/YYYY")")
                         .font(.system(size: 30,
                                       weight: .bold,
                                       design: .rounded))
-                       // .foregroundColor(.waterText)
+                        // .foregroundColor(.waterText)
                         .foregroundStyle(
-                    LinearGradient (
-                        colors: [.waterAccent, .waterPrimary],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing)
-                    )
+                            LinearGradient(
+                                colors: [.waterAccent, .waterPrimary],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing)
+                        )
                 })
-             
             }
             Spacer()
             Button("Next") {
@@ -65,8 +67,12 @@ struct AgeView: View {
             .padding(.vertical, 15)
             .foregroundColor(.waterTextInverse)
             .background(.waterPrimary, in: RoundedRectangle(cornerRadius: 10,
-                                                     style: .continuous))
+                                                            style: .continuous))
             .padding(.top, 40)
+        }
+        .onChange(of: isShowingDatePicker) {
+            dateOfBirth += 1
+            selectionMade = true
         }
         .sheet(isPresented: $isShowingDatePicker, content: {
             DatePicker(selection: $dateOfBirth, displayedComponents: [.date], label: { Text("Date Of Birth") })
@@ -74,16 +80,12 @@ struct AgeView: View {
                 .datePickerStyle(.graphical)
                 .presentationDetents([.medium])
                 .presentationDragIndicator(.automatic)
-                .onChange(of: dateOfBirth) {
-                    selectionMade = true
-                }
-        })
 
+        })
     }
 }
 
 #Preview {
-    
     AgeView(dateOfBirth: .constant(Date()), isShowingDatePicker: .constant(true)) {}
         .padding()
         .previewLayout(.sizeThatFits)

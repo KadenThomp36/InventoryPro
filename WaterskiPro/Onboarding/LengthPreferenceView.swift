@@ -25,13 +25,21 @@ struct LengthPreferenceView: View {
 
     var body: some View {
         VStack {
+            Group {
+                Text("What is your typical") +
+                    Text("\nstarting") +
+                    Text(" length").foregroundColor(.waterAccent) +
+                    Text("?")
+            }
+            .font(.system(size: 30,
+                          weight: .bold,
+                          design: .rounded))
+            .padding(.top, 50)
+            .padding(.vertical, 10)
+            .foregroundColor(.waterText)
+            .multilineTextAlignment(.center)
+            
             Spacer()
-
-            Text("What length do you usually start at?")
-                .font(.system(size: 30,
-                              weight: .bold,
-                              design: .rounded))
-                .foregroundColor(.waterText)
 
             Picker(selection: $length, label: Text("feet or meters")) {
                 Text("Feet").tag("feet")

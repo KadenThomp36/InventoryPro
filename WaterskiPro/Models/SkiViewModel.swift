@@ -11,7 +11,7 @@ import SwiftData
 @Observable
 class SkiViewModel {
     func addPass(context: ModelContext, session: Session) {
-        let newPass = Pass(session: session, timestamp: Date(), bouys: 0.0, ropeLength: 0, boatSpeed: 0, completion: Pass.Completion.clean)
+        let newPass = Pass(session: session, timestamp: Date(), bouys: 0.0, ropeLength: 0, boatSpeed: 0, completion: Pass.Completion.clean, pointsRaw: 50.0)
         context.insert(newPass)
     }
 }

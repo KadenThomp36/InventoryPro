@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @AppStorage("activeUser") private var activeUser: String?
+    @AppStorage("activeUser") private var activeUser: UUID?
 
     @Environment(\.modelContext) private var modelContext
     @EnvironmentObject var session: SessionManager
@@ -23,7 +23,7 @@ struct SignUpView: View {
         ZStack {
             Color.waterBackground.ignoresSafeArea()
             TabView(selection: $manager.active) {
-                UsernameView(text: $manager.user.name) {
+                UsernameView(username: $manager.user.name) {
                     manager.validateName()
                     if !manager.hasError {
                         // dismiss keyboard
@@ -32,14 +32,26 @@ struct SignUpView: View {
                     }
                 }
                 .tag(RegistrationManager.Screen.username)
-                AgeView(dateOfBirth: $manager.user.dateOfBirth, isShowingDatePicker: $isScrollEnabled, action: manager.next)
-                    .tag(RegistrationManager.Screen.dateOfBirth)
+
+                AgeView(dateOfBirth: $manager.user.dateOfBirth, isShowingDatePicker: $isScrollEnabled) {
+                    manager.validateDOB()
+                    if !manager.hasError {
+                        manager.next()
+                    }
+                }
+                .tag(RegistrationManager.Screen.dateOfBirth)
+
                 LengthPreferenceView(startingLength: $manager.user.prefLength, action: manager.next)
                     .tag(RegistrationManager.Screen.lengthPref)
+                
                 SpeedPreferenceView(startingSpeed: $manager.user.prefSpeed, action: manager.next)
                     .tag(RegistrationManager.Screen.speedPref)
+                
                 ProfilePicture(gender: $manager.user.gender, profilePicture: $manager.user.profilePicture) {
-                    showTerms.toggle()
+                    manager.validateGender()
+                    if !manager.hasError {
+                        showTerms.toggle()
+                    }
                 }
                 .tag(RegistrationManager.Screen.bio)
             }
@@ -86,7 +98,7 @@ struct SignUpView: View {
         .onDisappear {
             UIScrollView.appearance().isScrollEnabled = true
         }
-        .onChange(of: isScrollEnabled, { 
+        .onChange(of: isScrollEnabled, {
             UIScrollView.appearance().isScrollEnabled = isScrollEnabled
         })
         .onChange(of: manager.active) {
@@ -101,7 +113,7 @@ struct SignUpView: View {
 
     private func registerUser() {
         let newProfile: Profile = Profile(name: manager.user.name, gender: manager.user.gender, dateOfBirth: manager.user.dateOfBirth, profilePicture: manager.user.profilePicture, prefSpeed: manager.user.prefSpeed, prefLength: manager.user.prefLength)
-        activeUser = manager.user.name
+        activeUser = newProfile.id
         modelContext.insert(newProfile)
         try? modelContext.save()
     }

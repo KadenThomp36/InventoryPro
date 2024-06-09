@@ -17,15 +17,17 @@ final class Pass {
     var ropeLength: Int
     var boatSpeed: Int
     var completion: Completion // Completed clean, Completed sloppy, Failed Followed Through, Failed Fell,
+    var pointsRaw: Double
     var notes: String?
 
-    init(session: Session, timestamp: Date, bouys: Double, ropeLength: Int, boatSpeed: Int, completion: Completion) {
+    init(session: Session, timestamp: Date, bouys: Double, ropeLength: Int, boatSpeed: Int, completion: Completion, pointsRaw: Double) {
         self.session = session
         self.timestamp = timestamp
         self.bouys = bouys
         self.ropeLength = ropeLength
         self.boatSpeed = boatSpeed
         self.completion = completion
+        self.pointsRaw = pointsRaw
     }
 }
 

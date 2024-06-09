@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UsernameView: View {
-    @Binding var text: String
+    @Binding var username: String
     let action: () -> Void
 
     @Environment(\.modelContext) private var modelContext
@@ -24,8 +24,8 @@ struct UsernameView: View {
         VStack {
             Group {
                 Text("Let's get started,") +
-                    Text("\nWhat's your") +
-                    Text(" name").foregroundColor(.waterAccent) +
+                    Text("\nWhat can we call") +
+                    Text(" you").foregroundColor(.waterAccent) +
                     Text("?")
             }
             .font(.system(size: 30,
@@ -39,7 +39,7 @@ struct UsernameView: View {
             Spacer()
             
             // TODO: create a button style and textfield style for this
-            TextField("", text: $text)
+            TextField("", text: $username)
                 .frame(width: 350, height: 50)
                 .font(.system(size: 56, weight: .bold, design: .rounded))
                 .padding(.bottom, 8)
@@ -52,6 +52,7 @@ struct UsernameView: View {
                 )                .padding()
                 .multilineTextAlignment(.center)
                 .focused($usernameFieldIsFocused)
+                .disableAutocorrection(true)
 
             Spacer()
             
@@ -73,7 +74,7 @@ struct UsernameView: View {
 }
 
 #Preview {
-    UsernameView(text: .constant("")) {}
+    UsernameView(username: .constant("")) {}
         .padding()
         .previewLayout(.sizeThatFits)
         .background(.waterBackground)

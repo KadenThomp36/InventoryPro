@@ -10,10 +10,20 @@ import SwiftUI
 
 struct PassView: View {
     @Environment(\.modelContext) private var modelContext
+    
     let session: Session
     @State private var showingAddPass = false
+
+    @State private var showingEditSession = false
+    @State private var editedStart: Date = Date()
+    @State private var editedEnd: Date = Date()
+    @State private var editedLocation: Location = Location(name: "", latitude: 0, longitude: 0)
+    @State private var editedSessionType: Session.SessionType = .practice
+
     @State private var newPass: Pass?
     @State private var animate = false
+
+    @Query() var locations: [Location]
     var body: some View {
         VStack(alignment: .leading) {
             MapView(lat: session.location?.latitude ?? 0.0, long: session.location?.longitude ?? 0.0)
@@ -46,11 +56,68 @@ struct PassView: View {
                 PassListView
             }
         }
+        .onAppear {
+            editedStart = session.startTime
+            editedSessionType = session.sessionType
+            
+            if (session.location != nil) {
+                editedLocation = session.location!
+            }
+            if (session.endTime != nil) {
+                editedEnd = session.endTime!
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Edit") {
+                    showingEditSession.toggle()
+                }
+            }
+            ToolbarItem {}
+            ToolbarTitleMenu()
+        }
         .sheet(isPresented: $showingAddPass, content: {
             AddPassView(session: session)
                 .presentationDetents([.medium])
                 .presentationDragIndicator(.automatic)
         })
+        .sheet(isPresented: $showingEditSession, content: {
+            Form {
+                DatePicker("Start Time", selection: $editedStart, displayedComponents: [.hourAndMinute])
+                if (session.endTime != nil) {
+                    DatePicker("End Time", selection: $editedEnd, displayedComponents: [.hourAndMinute])
+                }
+                Picker(selection: $editedSessionType, label: Text("Session Type")) {
+                    ForEach(Session.SessionType.allCases, id: \.self) { sessionType in
+                        Text(sessionType.rawValue).tag(sessionType)
+                    }
+                }
+                Picker(selection: $editedLocation, label: Text("Location")) {
+                    ForEach(locations, id: \.self) { location in
+                        Text("\(location.name)").tag(location)
+                    }
+                }
+                Button("Continue") {
+                    saveEdits()
+                }
+                .font(.system(size: 20, weight: .bold, design: .rounded))
+                .frame(width: 300, height: 50)
+                .background(.waterPrimary, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .foregroundColor(.waterText)
+            }
+        })
+        .presentationDetents([.medium])
+    }
+
+    func saveEdits() {
+        session.startTime = editedStart
+        session.location = editedLocation
+        session.sessionType = editedSessionType
+        
+        if (session.endTime != nil) {
+            session.endTime = editedEnd
+        }
+        showingEditSession.toggle()
     }
 }
 
@@ -59,10 +126,10 @@ extension PassView {
         List {
             ForEach(session.passes.sorted(by: { $0.timestamp > $1.timestamp })) { pass in
                 NavigationLink {
-                    ItemDetailView(pass: pass)
+                    PassDetailView(pass: pass)
                         .navigationTitle("\(pass.timestamp, format: Date.FormatStyle(date: .abbreviated, time: .omitted))")
                 } label: {
-                    ItemLinkView(pass: pass)
+                    PassLinkView(pass: pass)
                 }
             }
             .onDelete(perform: deleteItems)

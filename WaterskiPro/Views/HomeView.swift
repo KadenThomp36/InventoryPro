@@ -14,7 +14,7 @@ struct HomeView: View {
     
     @Query(sort: \Profile.profileCreationDate, order: .reverse) private var users: [Profile]
 
-    @AppStorage("activeUser") private var activeUser: String?
+    @AppStorage("activeUser") private var activeUser: UUID?
 
     @State var loggedInUser: Profile = Profile()
     @State private var avatarImage: UIImage?
@@ -39,7 +39,7 @@ struct HomeView: View {
                         }
                             ForEach(users) { user in
                                 Button(action: {
-                                    activeUser = user.name
+                                    activeUser = user.id
                                     login()
                                 }, label: {
                                     Image(uiImage: getImage(imageData: user.profilePicture))
@@ -62,13 +62,13 @@ struct HomeView: View {
     }
     
     private func login() {
-        let userProfile = getActiveUser(activeUser: activeUser ?? "", users: users)
+        let userProfile = getActiveUser(activeUser: activeUser ?? UUID(), users: users)
         if (userProfile.found) {
-            activeUser = userProfile.user.name
+            activeUser = userProfile.user.id
             loggedInUser = userProfile.user
             loggedIn = true
         } else {
-            activeUser = ""
+            activeUser = UUID()
             loggedInUser = Profile()
             loggedIn = false
         }
@@ -76,7 +76,7 @@ struct HomeView: View {
     
     private func logout() {
         print("logout has been called")
-        activeUser = ""
+        activeUser = UUID()
         loggedInUser = Profile()
         loggedIn = false
     }

@@ -49,8 +49,8 @@ extension Session {
         let session1 = Session(startTime: Date(), sessionType: .practice, profile: profile)
         let session2 = Session(startTime: Date(), sessionType: .tournament, profile: profile)
 
-        let child1 = Pass(session: session1, timestamp: Date(), bouys: 0.0, ropeLength: 0, boatSpeed: 0, completion: .clean)
-        let child2 = Pass(session: session2, timestamp: Date(), bouys: 0.0, ropeLength: 0, boatSpeed: 0, completion: .failedFall)
+        let child1 = Pass(session: session1, timestamp: Date(), bouys: 0.0, ropeLength: 0, boatSpeed: 0, completion: .clean, pointsRaw: 50.0)
+        let child2 = Pass(session: session2, timestamp: Date(), bouys: 0.0, ropeLength: 0, boatSpeed: 0, completion: .failedFall, pointsRaw: 50.0)
 
         container.mainContext.insert(child1)
         container.mainContext.insert(child2)

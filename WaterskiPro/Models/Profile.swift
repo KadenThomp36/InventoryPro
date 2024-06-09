@@ -17,8 +17,8 @@ final class Profile: ObservableObject {
 
     init(){
         self.profileCreationDate = Date()
-        self.name = "Kaden"
-        self.gender = .male
+        self.name = ""
+        self.gender = .unselected
         self.dateOfBirth = Date()
         self.profilePicture = Data()
         self.isLoggedIn = true

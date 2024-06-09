@@ -5,8 +5,8 @@
 //  Created by Kaden Thompson on 4/28/24.
 //
 
-import SwiftUI
 import PhotosUI
+import SwiftUI
 
 struct ProfilePicture: View {
     @Binding var gender: Gender
@@ -15,7 +15,7 @@ struct ProfilePicture: View {
 
     @State private var avatarImage: UIImage?
     @State private var photosPickerItem: PhotosPickerItem?
-    
+
     var body: some View {
         VStack {
             ZStack {
@@ -30,25 +30,63 @@ struct ProfilePicture: View {
                         .clipShape(.circle)
                 }
             }
-            Text("Gender")
-                .font(.system(size: 30,
-                              weight: .bold,
-                              design: .rounded))
-                .foregroundColor(.waterAccent)
-            
-            Picker(selection: $gender, label: Text("Picker")) {
-                Text("Select An Option")
-                Text("Male").tag(Gender.male)
-                Text("Female").tag(Gender.female)
+            Spacer()
+            HStack(spacing: 0) {
+                Text("I am a ")
+                    .font(.system(size: 30,
+                                  weight: .bold,
+                                  design: .rounded))
+                    .foregroundColor(.waterText)
+                Menu {
+                    Picker(selection: $gender) {
+                        Text("Select an option").tag(Gender.unselected)
+                            .disabled(true)
+                        Text("Male").tag(Gender.male)
+                        Text("Female").tag(Gender.female)
+                    } label: {
+                    }
+                } label: {
+                    Text(gender == Gender.unselected ? "..." : gender.rawValue)
+                        .font(.system(size: 30,
+                                      weight: .bold,
+                                      design: .rounded))
+                        .foregroundColor(.waterAccent)
+                }
+
             }
-            .pickerStyle(.automatic)
-            .padding()
-            .frame(width: 350, height: 50)
-            .background(.waterPrimary, in: RoundedRectangle(cornerRadius: 10,
-                                                     style: .continuous))
-            .font(.system(size: 13, weight: .bold, design: .rounded))
-            .padding(.bottom, 8)
             
+//
+//            Menu {
+//                Picker(selection: $fratVote) {
+//                    ForEach(frats, id: \.self) {
+//                        Text($0)
+//                    }
+//                } label: {}
+//            } label: {
+//                Text("Frats")
+//                    .font(.largeTitle)
+//            }
+//            Text("Gender")
+//                .font(.system(size: 30,
+//                              weight: .bold,
+//                              design: .rounded))
+//                .foregroundColor(.waterAccent)
+//
+//            Picker(selection: $gender, label: Text("Picker")) {
+//                Text("Select an option").tag(Gender.unselected)
+//                Text("Male").tag(Gender.male)
+//                Text("Female").tag(Gender.female)
+//            }
+//            .pickerStyle(.automatic)
+//            .padding()
+//            .frame(width: 350, height: 50)
+//            .background(.waterPrimary, in: RoundedRectangle(cornerRadius: 10,
+//                                                     style: .continuous))
+//            .font(.system(size: 13, weight: .bold, design: .rounded))
+//            .padding(.bottom, 8)
+
+            Spacer()
+
             Button("Start Tracking") {
                 action()
             }
@@ -56,11 +94,11 @@ struct ProfilePicture: View {
             .padding(.horizontal, 60)
             .padding(.vertical, 15)
             .background(.waterPrimary, in: RoundedRectangle(cornerRadius: 10,
-                                                     style: .continuous))
+                                                            style: .continuous))
             .foregroundColor(.waterTextInverse)
             .padding(.top, 40)
         }
-        .onChange(of: photosPickerItem) { _, _ in
+        .onChange(of: photosPickerItem) {
             Task {
                 if let photosPickerItem,
                    let data = try? await photosPickerItem.loadTransferable(type: Data.self) {

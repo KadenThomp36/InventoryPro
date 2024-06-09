@@ -17,7 +17,7 @@ struct RecordSessionView: View {
     @AppStorage("length") private var lengthUnit = "feet"
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = true
     @AppStorage("hasCompletedSignUpFlow") private var hasCompletedSignup = true
-    @AppStorage("activeUser") private var activeUser: String?
+    @AppStorage("activeUser") private var activeUser: UUID?
 
     @Binding var user: Profile
     

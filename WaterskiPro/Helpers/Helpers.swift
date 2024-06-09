@@ -9,14 +9,28 @@ import Foundation
 import SwiftData
 import SwiftUI
 
+extension UUID: RawRepresentable {
+    public var rawValue: String {
+        self.uuidString
+    }
+
+    public typealias RawValue = String
+
+    public init?(rawValue: RawValue) {
+        self.init(uuidString: rawValue)
+    }
+}
+
 enum SessionType: String, CaseIterable, Codable {
     case imperial = "Imperial"
     case metric = "Metric"
 }
 
 enum Gender: String, CaseIterable, Codable {
+    case unselected = "Select an option"
     case male = "Male"
     case female = "Female"
+    case unspecified = "Prefer Not To Say"
 }
 
 let rangeBouys = 0.0 ... 6.0
@@ -182,11 +196,11 @@ func getImage(imageData: Data) -> UIImage {
 
 }
 
-func getActiveUser(activeUser: String, users: [Profile]) -> (user: Profile, found: Bool){
+func getActiveUser(activeUser: UUID, users: [Profile]) -> (user: Profile, found: Bool){
     
     print("active user -> ", activeUser)
     print(users)
-    if let userProfile = users.first(where: { $0.name == activeUser }) {
+    if let userProfile = users.first(where: { $0.id == activeUser }) {
         return (user: userProfile, found: true)
     } else {
         return (user: Profile(), found: false)

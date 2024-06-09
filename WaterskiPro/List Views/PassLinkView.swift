@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ItemLinkView: View {
+struct PassLinkView: View {
     @AppStorage("length") private var length = "feet"
     @AppStorage("speed") private var speed = "mph"
 
@@ -18,7 +18,7 @@ struct ItemLinkView: View {
                 Text("\(pass.timestamp, format: Date.FormatStyle(date: .omitted, time: .shortened))")
 
                 Spacer()
-                Text("\(formatNumber(BoysGirlsOne(rLength: pass.ropeLength, bSpeed: pass.boatSpeed, bouys: pass.bouys))) pts")
+                Text("\(formatNumber(pass.pointsRaw)) pts")
                 Spacer()
             }
             .font(.headline)
@@ -66,6 +66,6 @@ struct ItemLinkView: View {
 #Preview {
     let profile = Profile(name: "Kaden", gender: .female, dateOfBirth: Date(timeIntervalSinceReferenceDate: 0), profilePicture: Data(), prefSpeed: 0, prefLength: 0)
     let session = Session(startTime: Date(), sessionType: .practice, profile: profile)
-    let pass = Pass(session: session, timestamp: Date(), bouys: 3.0, ropeLength: boatSpeedRoapLengthRAW[4], boatSpeed: boatSpeedRoapLengthRAW[3], completion: .clean)
-    return ItemLinkView(pass: pass)
+    let pass = Pass(session: session, timestamp: Date(), bouys: 3.0, ropeLength: boatSpeedRoapLengthRAW[4], boatSpeed: boatSpeedRoapLengthRAW[3], completion: .clean, pointsRaw: 50.0)
+    return PassLinkView(pass: pass)
 }

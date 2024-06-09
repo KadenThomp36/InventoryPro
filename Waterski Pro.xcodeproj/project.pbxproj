@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		3106B81F2B4886F8006B4672 /* PassListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B81E2B4886F8006B4672 /* PassListView.swift */; };
 		3106B8212B489E04006B4672 /* SessionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B8202B489E04006B4672 /* SessionListView.swift */; };
-		3106B8232B4B8741006B4672 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B8222B4B8741006B4672 /* ItemDetailView.swift */; };
-		31132A5A2B4C32CA00605541 /* ItemLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31132A592B4C32CA00605541 /* ItemLinkView.swift */; };
+		3106B8232B4B8741006B4672 /* PassDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3106B8222B4B8741006B4672 /* PassDetailView.swift */; };
+		31132A5A2B4C32CA00605541 /* PassLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31132A592B4C32CA00605541 /* PassLinkView.swift */; };
 		3115DD8D2B632FBA0067BF7B /* ItemTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3115DD8C2B632FBA0067BF7B /* ItemTag.swift */; };
 		3115DD8F2B6336BB0067BF7B /* EditTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3115DD8E2B6336BB0067BF7B /* EditTagView.swift */; };
 		311B9FD42BD74AB9003DAF4E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B9FD32BD74AB9003DAF4E /* SettingsView.swift */; };
@@ -34,6 +34,7 @@
 		316650EE2B464B7900C3012D /* Pass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316650ED2B464B7900C3012D /* Pass.swift */; };
 		316650F02B464B7B00C3012D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316650EF2B464B7B00C3012D /* Assets.xcassets */; };
 		316650F32B464B7B00C3012D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316650F22B464B7B00C3012D /* Preview Assets.xcassets */; };
+		3184075F2BEE925C004E12E8 /* AddEditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3184075E2BEE925C004E12E8 /* AddEditProfileView.swift */; };
 		318A23782BA1DFA500018C4C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A23772BA1DFA500018C4C /* MapView.swift */; };
 		318A237A2BA1E30100018C4C /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A23792BA1E30100018C4C /* LocationDataManager.swift */; };
 		3192C2F22BEB0CB600BD9251 /* MapViewDynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3192C2F12BEB0CB600BD9251 /* MapViewDynamic.swift */; };
@@ -53,8 +54,8 @@
 /* Begin PBXFileReference section */
 		3106B81E2B4886F8006B4672 /* PassListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassListView.swift; sourceTree = "<group>"; };
 		3106B8202B489E04006B4672 /* SessionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListView.swift; sourceTree = "<group>"; };
-		3106B8222B4B8741006B4672 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
-		31132A592B4C32CA00605541 /* ItemLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLinkView.swift; sourceTree = "<group>"; };
+		3106B8222B4B8741006B4672 /* PassDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDetailView.swift; sourceTree = "<group>"; };
+		31132A592B4C32CA00605541 /* PassLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassLinkView.swift; sourceTree = "<group>"; };
 		3115DD8C2B632FBA0067BF7B /* ItemTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTag.swift; sourceTree = "<group>"; };
 		3115DD8E2B6336BB0067BF7B /* EditTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTagView.swift; sourceTree = "<group>"; };
 		311B9FD32BD74AB9003DAF4E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		316650ED2B464B7900C3012D /* Pass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pass.swift; sourceTree = "<group>"; };
 		316650EF2B464B7B00C3012D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		316650F22B464B7B00C3012D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3184075E2BEE925C004E12E8 /* AddEditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProfileView.swift; sourceTree = "<group>"; };
 		318A23772BA1DFA500018C4C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		318A23792BA1E30100018C4C /* LocationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
 		3192C2F12BEB0CB600BD9251 /* MapViewDynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewDynamic.swift; sourceTree = "<group>"; };
@@ -109,7 +111,7 @@
 		31132A582B4C32A000605541 /* List Views */ = {
 			isa = PBXGroup;
 			children = (
-				31132A592B4C32CA00605541 /* ItemLinkView.swift */,
+				31132A592B4C32CA00605541 /* PassLinkView.swift */,
 				4FD529C82B4C95EF00165276 /* SessionLinkView.swift */,
 			);
 			path = "List Views";
@@ -126,10 +128,10 @@
 				311B9FE42BDF226C003DAF4E /* AgeView.swift */,
 				311B9FEC2BDFEE3F003DAF4E /* SignUpView.swift */,
 				311B9FEE2BDFEEEF003DAF4E /* RegistrationManager.swift */,
-				311B9FF02BE07D66003DAF4E /* TermsAgreementView.swift */,
 				311B9FF22BE18753003DAF4E /* SpeedPreferenceView.swift */,
 				31FD04DF2BE463B70053C205 /* LengthPreferenceView.swift */,
 				311B9FE82BDF2E7D003DAF4E /* ProfilePicture.swift */,
+				311B9FF02BE07D66003DAF4E /* TermsAgreementView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -181,7 +183,7 @@
 				311B9FDF2BDC361D003DAF4E /* MainAppView.swift */,
 				31BDA5A22B470CD700211300 /* AddPassView.swift */,
 				3106B81E2B4886F8006B4672 /* PassListView.swift */,
-				3106B8222B4B8741006B4672 /* ItemDetailView.swift */,
+				3106B8222B4B8741006B4672 /* PassDetailView.swift */,
 				31B37F0E2B560FE8007628F9 /* RecordSessionView.swift */,
 				31D005A22B69D49C009A69CE /* AddTagView.swift */,
 				3106B8202B489E04006B4672 /* SessionListView.swift */,
@@ -190,6 +192,7 @@
 				318A23772BA1DFA500018C4C /* MapView.swift */,
 				3192C2F12BEB0CB600BD9251 /* MapViewDynamic.swift */,
 				311B9FD32BD74AB9003DAF4E /* SettingsView.swift */,
+				3184075E2BEE925C004E12E8 /* AddEditProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,7 +309,7 @@
 				311B9FEB2BDF33F6003DAF4E /* Profile.swift in Sources */,
 				3192C2F22BEB0CB600BD9251 /* MapViewDynamic.swift in Sources */,
 				311B9FE32BDF2058003DAF4E /* UsernameView.swift in Sources */,
-				3106B8232B4B8741006B4672 /* ItemDetailView.swift in Sources */,
+				3106B8232B4B8741006B4672 /* PassDetailView.swift in Sources */,
 				31BDA5A62B4748F800211300 /* Session.swift in Sources */,
 				311B9FF12BE07D66003DAF4E /* TermsAgreementView.swift in Sources */,
 				31B37F0F2B560FE8007628F9 /* RecordSessionView.swift in Sources */,
@@ -318,13 +321,14 @@
 				31D005A32B69D49C009A69CE /* AddTagView.swift in Sources */,
 				3106B8212B489E04006B4672 /* SessionListView.swift in Sources */,
 				315676BB2BB5BC400069B669 /* SkiViewModel.swift in Sources */,
+				3184075F2BEE925C004E12E8 /* AddEditProfileView.swift in Sources */,
 				311B9FF32BE18753003DAF4E /* SpeedPreferenceView.swift in Sources */,
 				31BDA5A32B470CD700211300 /* AddPassView.swift in Sources */,
 				31A59F4E2BC0478E00B464A0 /* Location.swift in Sources */,
 				311B9FDC2BDC2CFD003DAF4E /* OnboardingManager.swift in Sources */,
 				311B9FEF2BDFEEEF003DAF4E /* RegistrationManager.swift in Sources */,
 				31B37F0D2B560866007628F9 /* EditCategoryView.swift in Sources */,
-				31132A5A2B4C32CA00605541 /* ItemLinkView.swift in Sources */,
+				31132A5A2B4C32CA00605541 /* PassLinkView.swift in Sources */,
 				311B9FD62BDB2D1A003DAF4E /* Scoring.swift in Sources */,
 				318A237A2BA1E30100018C4C /* LocationDataManager.swift in Sources */,
 				311B9FED2BDFEE3F003DAF4E /* SignUpView.swift in Sources */,

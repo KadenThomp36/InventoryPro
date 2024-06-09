@@ -25,16 +25,21 @@ struct SpeedPreferenceView: View {
     
     var body: some View {
         VStack {
+            Group {
+                Text("...and how") +
+                    Text(" fast ").foregroundColor(.waterAccent) +
+                    Text("do you") +
+                    Text("\nlike to go?")
+            }
+            .font(.system(size: 30,
+                          weight: .bold,
+                          design: .rounded))
+            .padding(.top, 50)
+            .padding(.vertical, 10)
+            .foregroundColor(.waterText)
+            .multilineTextAlignment(.center)
+            
             Spacer()
-            
-            Text("...and how fast do you typically to go?")
-                .multilineTextAlignment(.leading)
-                .fixedSize(horizontal: false, vertical: true)
-                .font(.system(size: 30,
-                              weight: .bold,
-                              design: .rounded))
-                .foregroundColor(.waterText)
-            
             
             Picker(selection: $speed, label: Text("mph or kph")) {
                 Text("MPH").tag("mph")
